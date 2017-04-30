@@ -45,12 +45,12 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /pixi\.js/,
-        use: ['expose-loader?PIXI']
-      },
-      {
         test: /phaser-split\.js$/,
         use: ['expose-loader?Phaser']
+      },
+      {
+        test: /pixi\.js/,
+        use: ['expose-loader?PIXI']
       },
       {
         test: /p2\.js/,

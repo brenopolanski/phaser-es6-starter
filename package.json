@@ -27,7 +27,6 @@
     "dev": "webpack --display-error-details --config ./webpack/dev.config",
     "build": "yarn clean:folder && yarn build:webpack",
     "build:webpack": "cross-env NODE_ENV=production BABEL_ENV=production webpack --progress --config ./webpack/prod.config -p",
-    "test": "eslint ./src/**/**.js",
     "clean:folder": "rimraf game"
   },
   "dependencies": {
@@ -36,6 +35,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
@@ -44,9 +44,7 @@
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-loader": "^1.7.1",
     "expose-loader": "^0.7.3",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.11.1",
