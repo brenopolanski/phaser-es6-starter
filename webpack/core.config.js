@@ -1,5 +1,9 @@
+'use strict';
+
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const config = require('./config');
 
 const phaserModule = path.join(__dirname, '../node_modules/phaser-ce/');
 const phaser = path.join(phaserModule, 'build/custom/phaser-split.js');
@@ -16,21 +20,29 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../game'),
-    publicPath: '../game/',
-    filename: 'bundle.js'
+    filename: 'game-[chunkhash].js'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: config.title,
+      template: path.join(__dirname, '../src', 'index.html')
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.bundle.js'
+      filename: '[name]-[chunkhash].js'
     })
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader'],
-        include: path.join(__dirname, '../src')
+        include: path.join(__dirname, '../src'),
+        use: ['babel-loader']
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, '../src'),
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /pixi\.js/,
@@ -43,6 +55,32 @@ module.exports = {
       {
         test: /p2\.js/,
         use: ['expose-loader?p2']
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
+        include: path.join(__dirname, '../src'),
+        use: {
+          loader: 'file-loader',
+          query: {
+            name: 'media/[name].[hash:8].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.(mp4|webm|wav|mp3|m4a|aac|oga)(\?.*)?$/,
+        include: path.join(__dirname, '../src'),
+        use: {
+          loader: 'url-loader',
+          query: {
+            limit: 10000,
+            name: 'media/[name].[hash:8].[ext]'
+          }
+        }
+      },
+      {
+        test: /\.json$/,
+        include: path.join(__dirname, '../src'),
+        use: 'json-loader'
       }
     ]
   },

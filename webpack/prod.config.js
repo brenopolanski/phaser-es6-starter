@@ -1,4 +1,7 @@
+'use strict';
+
 const webpack = require('webpack');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const merge = require('webpack-merge');
 const core = require('./core.config');
 
@@ -9,6 +12,7 @@ const definePlugin = new webpack.DefinePlugin({
 module.exports = merge.smart(core, {
   plugins: [
     definePlugin,
+    new FaviconsWebpackPlugin('./src/assets/logo.png'),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.UglifyJsPlugin({
       compress: true,
