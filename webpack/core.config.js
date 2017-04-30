@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 const config = require('./config');
 
@@ -14,7 +15,7 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      path.resolve(__dirname, '../src/main.js')
+      path.resolve(__dirname, '../src/js/Main.js')
     ],
     vendor: ['pixi', 'p2', 'phaser', 'webfontloader']
   },
@@ -27,6 +28,16 @@ module.exports = {
       title: config.title,
       template: path.join(__dirname, '../src', 'index.html')
     }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          useEslintrc: true
+        },
+        postcss: () => {
+          return [autoprefixer];
+        }
+      }
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: '[name]-[chunkhash].js'
@@ -35,26 +46,36 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
         include: path.join(__dirname, '../src'),
-        use: ['babel-loader']
+        use: 'eslint-loader'
+      },
+      {
+        test: /\.js$/,
+        include: path.join(__dirname, '../src'),
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,
         include: path.join(__dirname, '../src'),
-        use: ['style-loader', 'css-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /phaser-split\.js$/,
-        use: ['expose-loader?Phaser']
+        use: 'expose-loader?Phaser'
       },
       {
         test: /pixi\.js/,
-        use: ['expose-loader?PIXI']
+        use: 'expose-loader?PIXI'
       },
       {
         test: /p2\.js/,
-        use: ['expose-loader?p2']
+        use: 'expose-loader?p2'
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|txt)(\?.*)?$/,
