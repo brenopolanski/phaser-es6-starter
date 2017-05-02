@@ -4,7 +4,6 @@ import Phaser from 'phaser';
 import '../css/game.css';
 
 import BootState from './states/BootState';
-import SplashState from './states/SplashState';
 import PreloaderState from './states/PreloaderState';
 import MainMenuState from './states/MainMenuState';
 import GameState from './states/GameState';
@@ -22,7 +21,6 @@ class Game extends Phaser.Game {
 
     // Add the States your game has.
     this.state.add('BootState', BootState);
-    this.state.add('SplashState', SplashState);
     this.state.add('PreloaderState', PreloaderState);
     this.state.add('MainMenuState', MainMenuState);
     this.state.add('GameState', GameState);
