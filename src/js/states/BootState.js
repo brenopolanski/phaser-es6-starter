@@ -1,8 +1,7 @@
 import Phaser from 'phaser';
 
 import Settings from '../Settings';
-import preloaderBackground from '../../images/preloader_background.jpg';
-import preloaderBar from '../../images/preloader_bar.png';
+import preloadBar from '../../images/loader.png';
 
 class BootState extends Phaser.State {
   init() {
@@ -32,8 +31,7 @@ class BootState extends Phaser.State {
   preload() {
     // Here we load the assets required for our preloader
     // (in this case a background and a loading bar).
-    this.load.image('preloaderBackground', preloaderBackground);
-    this.load.image('preloaderBar', preloaderBar);
+    this.load.image('preloadBar', preloadBar);
   }
 
   create() {
