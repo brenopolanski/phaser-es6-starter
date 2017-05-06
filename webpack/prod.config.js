@@ -12,7 +12,7 @@ const definePlugin = new webpack.DefinePlugin({
 module.exports = merge.smart(core, {
   plugins: [
     definePlugin,
-    new FaviconsWebpackPlugin('./src/assets/logo.png'),
+    new FaviconsWebpackPlugin('./src/images/favicon.png'),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.UglifyJsPlugin({
       compress: true,
