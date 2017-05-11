@@ -3,7 +3,7 @@ game/
 .publish/
 firefox_root/
 
-# Created by https://www.gitignore.io/api/node,webstorm,sublimetext,visualstudio,visualstudiocode,cloud9,git
+# Created by https://www.gitignore.io/api/node,webstorm,sublimetext,visualstudio,visualstudiocode,cloud9,git,vim,macos,linux,windows
 
 ### Cloud9 ###
 # Cloud9 IDE - http://c9.io
@@ -12,6 +12,48 @@ firefox_root/
 
 ### Git ###
 *.orig
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 ### Node ###
 # Logs
@@ -106,6 +148,19 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+# auto-generated tag files
+tags
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -174,6 +229,27 @@ fabric.properties
 
 # Sonarlint plugin
 .idea/sonarlint
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -370,7 +446,6 @@ _pkginfo.txt
 # Others
 ClientBin/
 ~$*
-*~
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
@@ -462,4 +537,4 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# End of https://www.gitignore.io/api/node,webstorm,sublimetext,visualstudio,visualstudiocode,cloud9,git
+# End of https://www.gitignore.io/api/node,webstorm,sublimetext,visualstudio,visualstudiocode,cloud9,git,vim,macos,linux,windows
