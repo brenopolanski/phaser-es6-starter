@@ -1,4 +1,6 @@
-# Phaser ES6 Starter
+<p align="center">
+  <img src="https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/phaser-es6-starter.png">
+</p>
 
 ![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
 
