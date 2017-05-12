@@ -17,7 +17,12 @@
   "keywords": [
     "phaser",
     "phaser-boilerplate",
-    "phaser-es6-webpack"
+    "phaser-es6-webpack",
+    "game",
+    "webpack",
+    "html5",
+    "canvas",
+    "javascript"
   ],
   "bugs": {
     "url": "https://github.com/brenopolanski/phaser-es6-starter/issues"
