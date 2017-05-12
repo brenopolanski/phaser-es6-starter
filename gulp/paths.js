@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-  configTemplates: {
+  toolkit: {
     vscodeIntellisense: {
       files: {
-        copy: './config-templates/vscode-intellisense/**/*',
+        copy: './toolkit/vscode-intellisense/**/*',
         to: './src/js/'
       }
     }
