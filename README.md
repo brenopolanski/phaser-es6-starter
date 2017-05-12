@@ -4,24 +4,18 @@
 
 ![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
 
-### Contributing
+## Contributing
 
 If you want to help, please read the [Contributing](https://github.com/brenopolanski/phaser-es6-starter/blob/master/CONTRIBUTING.md) guide.
 
-![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
-
-### History
+## History
 
 For detailed changelog, see [Releases](https://github.com/brenopolanski/phaser-es6-starter/releases).
 
-![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
-
-### Credits
+## Credits
 
 Phaser is a free and open source software developed and owned by [Richard Davey](https://github.com/photonstorm) at [www.photonstorm.com](http://www.photonstorm.com/). You can visit [their funding page](http://phaser.io/community/donate) and help them to make Phaser even better.
 
-![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
-
-### License
+## License
 
 [MIT License](http://brenopolanski.mit-license.org/) © Breno Polanski
