@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const merge = require('webpack-merge');
 const core = require('./core.config');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
@@ -23,4 +24,7 @@ module.exports = merge.smart(core, {
       }
     })
   ]
+  .concat(
+    process.env.ANALYZER ? new BundleAnalyzerPlugin() : []
+  )
 });
