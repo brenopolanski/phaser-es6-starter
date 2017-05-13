@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 class Player extends Phaser.Sprite {
   constructor(game, x, y) {
-    super(game, x, y, 'simon', 0);
+    super(game, x, y, 'player', 0);
 
     this.anchor.setTo(0.5, 0);
 

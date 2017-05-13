@@ -1,9 +1,9 @@
 import Phaser from 'phaser';
 
-import titlepage from '../../images/titlepage.jpg';
+import menuBackground from '../../images/menu_background.jpg';
 import logo from '../../images/logo.png';
 import level1 from '../../images/level1.png';
-import simon from '../../images/spritesheet/simon.png';
+import player from '../../images/spritesheet/player.png';
 import music from '../../audio/music/title.mp3';
 
 class PreloaderState extends Phaser.State {
@@ -18,10 +18,10 @@ class PreloaderState extends Phaser.State {
 
 
     // Load our actual games assets.
-    this.load.image('titlepage', titlepage);
+    this.load.image('menuBackground', menuBackground);
     this.load.image('logo', logo);
     this.load.audio('music', music, true);
-    this.load.spritesheet('simon', simon, 58, 96, 5);
+    this.load.spritesheet('player', player, 58, 96, 5);
     this.load.image('level1', level1);
   }
 
