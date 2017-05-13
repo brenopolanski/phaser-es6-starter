@@ -4,7 +4,7 @@ import menuBackground from '../../images/menu_background.jpg';
 import logo from '../../images/logo.png';
 import level1 from '../../images/level1.png';
 import player from '../../images/spritesheet/player.png';
-import music from '../../audio/music/title.mp3';
+import music from '../../audio/music/play.mp3';
 
 class PreloaderState extends Phaser.State {
   init() {
