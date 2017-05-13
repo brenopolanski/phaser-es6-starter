@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import Settings from '../Settings';
+import Properties from '../Properties';
 import preloadBar from '../../images/loader.png';
 
 class BootState extends Phaser.State {
@@ -22,7 +22,7 @@ class BootState extends Phaser.State {
       // In this case we're saying "scale the game,
       // no lower than 480x260 and no higher than 1024x768".
       this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-      this.scale.setMinMax(480, 260, Settings.gameWidth, Settings.gameHeight);
+      this.scale.setMinMax(480, 260, Properties.gameWidth, Properties.gameHeight);
       this.scale.forceLandscape = true;
       this.scale.pageAlignHorizontally = true;
     }

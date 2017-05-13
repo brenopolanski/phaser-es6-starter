@@ -23,8 +23,7 @@ module.exports = merge.smart(core, {
         comments: false
       }
     })
-  ]
-  .concat(
+  ].concat(
     process.env.ANALYZER ? new BundleAnalyzerPlugin() : []
   )
 });

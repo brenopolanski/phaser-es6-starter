@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 
-import Player from './Player';
+import Player from '../prefabs/Player';
 
 class GameState extends Phaser.State {
   init() {
