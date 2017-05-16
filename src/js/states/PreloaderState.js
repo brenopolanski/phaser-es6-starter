@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 import menuBackground from '../../images/menu_background.jpg';
 import logo from '../../images/logo.png';
-import level1 from '../../images/level1.png';
+import level1 from '../../images/level_1.png';
 import player from '../../images/spritesheet/player.png';
 import music from '../../audio/music/play.mp3';
 

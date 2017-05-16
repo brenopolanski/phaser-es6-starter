@@ -6,7 +6,7 @@ class Player extends Phaser.Sprite {
 
     this.anchor.setTo(0.5, 0);
 
-    this.animations.add('walk', [ 0, 1, 2, 3, 4 ], 10, true);
+    this.animations.add('walk', [0, 1, 2, 3, 4], 10, true);
 
     game.add.existing(this);
 
@@ -14,9 +14,12 @@ class Player extends Phaser.Sprite {
   }
 
   update() {
+    // Set up a Phaser controller for keyboard input.
+    const cursors = this.game.input.keyboard.createCursorKeys();
+
     this.body.velocity.x = 0;
 
-    if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+    if (cursors.left.isDown) {
       this.body.velocity.x = -150;
       this.animations.play('walk');
 
@@ -24,7 +27,7 @@ class Player extends Phaser.Sprite {
         this.scale.x = -1;
       }
     }
-    else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+    else if (cursors.right.isDown) {
       this.body.velocity.x = 150;
       this.animations.play('walk');
 

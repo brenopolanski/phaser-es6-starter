@@ -19,8 +19,8 @@ class BootState extends Phaser.State {
     }
     else {
       // Same goes for mobile settings.
-      // In this case we're saying "scale the game,
-      // no lower than 480x260 and no higher than 1024x768".
+      // In this case we're saying scale the game,
+      // no lower than 480x260 and no higher than 800x600".
       this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       this.scale.setMinMax(480, 260, Properties.gameWidth, Properties.gameHeight);
       this.scale.forceLandscape = true;
