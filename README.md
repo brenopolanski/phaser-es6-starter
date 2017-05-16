@@ -4,6 +4,12 @@
 
 ![div](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/div.png)
 
+<br />
+
+[![Webpack](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/webpack-90.png)](https://webpack.github.io/)
+[![ESLint](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/eslint-90.png)](http://eslint.org/)
+[![Yarn](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/yarn-90.png)](https://yarnpkg.com/)
+
 ## Contributing
 
 If you want to help, please read the [Contributing](https://github.com/brenopolanski/phaser-es6-starter/blob/master/CONTRIBUTING.md) guide.
