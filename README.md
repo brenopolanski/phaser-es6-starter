@@ -6,9 +6,12 @@
 
 <br />
 
+[![ES6](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/js-90.png)](https://www.ecma-international.org/ecma-262/6.0/)
 [![Webpack](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/webpack-90.png)](https://webpack.github.io/)
 [![ESLint](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/eslint-90.png)](http://eslint.org/)
 [![Yarn](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/yarn-90.png)](https://yarnpkg.com/)
+
+A template for writing [Phaser](http://phaser.io/) Games based on [ECMAScript 2015 (ES6)](https://www.ecma-international.org/ecma-262/6.0/) + [Webpack](https://webpack.github.io/) + [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) for rapid game development.
 
 ## Contributing
 
