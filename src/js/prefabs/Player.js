@@ -11,15 +11,34 @@ class Player extends Phaser.Sprite {
     game.add.existing(this);
 
     game.physics.enable(this, Phaser.Physics.ARCADE);
+
+    // Set up a Phaser controller for keyboard input.
+    this.cursors = game.input.keyboard.createCursorKeys();
+
+    // Set up a Phaser controller for gamepad input.
+    game.input.gamepad.start();
+
+    // To listen to buttons from a specific pad listen directly on
+    // that pad game.input.gamepad.padX, where X = pad 1-4.
+    this.gamePad1 = game.input.gamepad.pad1;
   }
 
   update() {
-    // Set up a Phaser controller for keyboard input.
-    const cursors = this.game.input.keyboard.createCursorKeys();
-
     this.body.velocity.x = 0;
 
-    if (cursors.left.isDown) {
+    // GamePad "connected or not" indicator
+    if (this.game.input.gamepad.supported &&
+        this.game.input.gamepad.active &&
+        this.gamePad1.connected) {
+      console.log('TRUE');
+    }
+    else {
+      console.log('FALSE');
+    }
+
+    // GamePad controls
+
+    if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
       this.body.velocity.x = -150;
       this.animations.play('walk');
 
@@ -27,7 +46,7 @@ class Player extends Phaser.Sprite {
         this.scale.x = -1;
       }
     }
-    else if (cursors.right.isDown) {
+    else if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1) {
       this.body.velocity.x = 150;
       this.animations.play('walk');
 
@@ -38,6 +57,27 @@ class Player extends Phaser.Sprite {
     else {
       this.animations.frame = 0;
     }
+
+    // Keyboard controls
+    // if (this.cursors.left.isDown) {
+    //   this.body.velocity.x = -150;
+    //   this.animations.play('walk');
+
+    //   if (this.scale.x === 1) {
+    //     this.scale.x = -1;
+    //   }
+    // }
+    // else if (this.cursors.right.isDown) {
+    //   this.body.velocity.x = 150;
+    //   this.animations.play('walk');
+
+    //   if (this.scale.x === -1) {
+    //     this.scale.x = 1;
+    //   }
+    // }
+    // else {
+    //   this.animations.frame = 0;
+    // }
   }
 }
 
