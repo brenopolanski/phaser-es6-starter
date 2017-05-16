@@ -12,12 +12,17 @@ class Player extends Phaser.Sprite {
 
     game.physics.enable(this, Phaser.Physics.ARCADE);
 
+    game.input.gamepad.start();
+
+    this.gamePadIndicator = game.add.sprite(10, 10, 'gamePadIndicator');
+    this.gamePadIndicator.scale.x = 2;
+    this.gamePadIndicator.scale.y = 2;
+    this.gamePadIndicator.animations.frame = 1;
+
     // Set up a Phaser controller for keyboard input.
     this.cursors = game.input.keyboard.createCursorKeys();
 
     // Set up a Phaser controller for gamepad input.
-    game.input.gamepad.start();
-
     // To listen to buttons from a specific pad listen directly on
     // that pad game.input.gamepad.padX, where X = pad 1-4.
     this.gamePad1 = game.input.gamepad.pad1;
@@ -26,14 +31,15 @@ class Player extends Phaser.Sprite {
   update() {
     this.body.velocity.x = 0;
 
-    // GamePad "connected or not" indicator
+    // Gamepad "connected or not" indicator
     if (this.game.input.gamepad.supported &&
         this.game.input.gamepad.active &&
         this.gamePad1.connected) {
-      console.log('TRUE');
+
+      this.gamePadIndicator.animations.frame = 0;
     }
     else {
-      console.log('FALSE');
+      this.gamePadIndicator.animations.frame = 1;
     }
 
     // GamePad controls
