@@ -37,53 +37,54 @@ class Player extends Phaser.Sprite {
         this.gamePad1.connected) {
 
       this.gamePadIndicator.animations.frame = 0;
+
+      // GamePad controls
+      if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) ||
+          this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
+
+        this.walkToLeft();
+      }
+      else if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) ||
+               this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1) {
+
+        this.walkToRight();
+      }
+      else {
+        this.animations.frame = 0;
+      }
     }
     else {
       this.gamePadIndicator.animations.frame = 1;
-    }
 
-    // GamePad controls
-
-    if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) || this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
-      this.body.velocity.x = -150;
-      this.animations.play('walk');
-
-      if (this.scale.x === 1) {
-        this.scale.x = -1;
+      // Keyboard controls
+      if (this.cursors.left.isDown) {
+        this.walkToLeft();
+      }
+      else if (this.cursors.right.isDown) {
+        this.walkToRight();
+      }
+      else {
+        this.animations.frame = 0;
       }
     }
-    else if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_RIGHT) || this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) > 0.1) {
-      this.body.velocity.x = 150;
-      this.animations.play('walk');
+  }
 
-      if (this.scale.x === -1) {
-        this.scale.x = 1;
-      }
+  walkToLeft() {
+    this.body.velocity.x = -150;
+    this.animations.play('walk');
+
+    if (this.scale.x === 1) {
+      this.scale.x = -1;
     }
-    else {
-      this.animations.frame = 0;
+  }
+
+  walkToRight() {
+    this.body.velocity.x = 150;
+    this.animations.play('walk');
+
+    if (this.scale.x === -1) {
+      this.scale.x = 1;
     }
-
-    // Keyboard controls
-    // if (this.cursors.left.isDown) {
-    //   this.body.velocity.x = -150;
-    //   this.animations.play('walk');
-
-    //   if (this.scale.x === 1) {
-    //     this.scale.x = -1;
-    //   }
-    // }
-    // else if (this.cursors.right.isDown) {
-    //   this.body.velocity.x = 150;
-    //   this.animations.play('walk');
-
-    //   if (this.scale.x === -1) {
-    //     this.scale.x = 1;
-    //   }
-    // }
-    // else {
-    //   this.animations.frame = 0;
-    // }
   }
 }
 
