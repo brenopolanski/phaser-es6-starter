@@ -11,7 +11,8 @@
   "globals": {
     "Phaser": true,
     "PIXI": true,
-    "p2": true
+    "p2": true,
+    "__DEV__": true
   },
   "rules": {
     "no-cond-assign": ["error", "except-parens"],

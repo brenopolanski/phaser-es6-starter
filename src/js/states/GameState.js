@@ -20,6 +20,12 @@ class GameState extends Phaser.State {
 
     this.player = new Player(this.game, 130, 284);
   }
+
+  render() {
+    if (__DEV__) {
+      this.game.debug.spriteInfo(this.player, 35, 500);
+    }
+  }
 }
 
 export default GameState;
