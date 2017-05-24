@@ -3,9 +3,13 @@ import Phaser from 'phaser';
 import Properties from '../Properties';
 import preloadBar from '../../images/loader.png';
 
-// This is a base State class which can be extended. It provides quick access
-// to common functions such as the camera, cache, input, match, sound and more.
+/**
+ * Setup the pre-game boot sequence.
+ */
 class BootState extends Phaser.State {
+  /**
+   * Setup variables or objects before the preloading starts.
+   */
   init() {
     // Unless you specifically know your game needs to support
     // multi-touch, I would recommend setting this to 1.
@@ -24,7 +28,7 @@ class BootState extends Phaser.State {
 
       // Same goes for mobile settings.
       // In this case we're saying scale the game,
-      // no lower than 480x260 and no higher than 800x600".
+      // no lower than 480x260 and no higher than 800x600.
       this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
       this.scale.setMinMax(480, 260, gameWidth, gameHeight);
       this.scale.forceLandscape = true;
@@ -32,12 +36,18 @@ class BootState extends Phaser.State {
     }
   }
 
+  /**
+   * Preload any assets needed for the preload state.
+   */
   preload() {
     // Here we load the assets required for our preloader
     // (in this case a background and a loading bar).
     this.load.image('preloadBar', preloadBar);
   }
 
+  /**
+   * Setup anything that is needed before the preload state begins.
+   */
   create() {
     // By this point the preloader assets have loaded to the cache,
     // we've set the game settings.

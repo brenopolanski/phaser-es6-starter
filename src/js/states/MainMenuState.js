@@ -1,15 +1,21 @@
 import Phaser from 'phaser';
 
-// This is a base State class which can be extended. It provides quick access
-// to common functions such as the camera, cache, input, match, sound and more.
+/**
+ * Show menu background and logo.
+ */
 class MainMenuState extends Phaser.State {
+  /**
+   * Setup variables or objects before the preloading starts.
+   */
   init() {
     this.background = null;
     this.logo = null;
   }
 
-  // A couple of Sprites, tweens to make them appear. Then the game waits
-  // for an input event before fading out and starting the Game class.
+  /**
+   * A couple of Sprites, tweens to make them appear. Then the game waits
+   * for an input event before fading out and starting the Game class.
+   */
   create() {
     this.background = this.add.sprite(0, 0, 'menuBackground');
     this.background.alpha = 0;
@@ -28,6 +34,9 @@ class MainMenuState extends Phaser.State {
     this.input.onDown.addOnce(this.fadeOut, this);
   }
 
+  /**
+   * Hide background and move logo.
+   */
   fadeOut() {
     const tween = this.add.tween(this.logo).to(
       { y: 800 }, 2000, Phaser.Easing.Linear.None, true
@@ -40,6 +49,9 @@ class MainMenuState extends Phaser.State {
     tween.onComplete.add(this.startGame, this);
   }
 
+  /**
+   * Move on to the game state.
+   */
   startGame() {
     this.state.start('GameState');
   }

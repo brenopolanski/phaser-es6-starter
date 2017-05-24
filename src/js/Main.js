@@ -10,10 +10,16 @@ import PreloaderState from './states/PreloaderState';
 import MainMenuState from './states/MainMenuState';
 import GameState from './states/GameState';
 
-// The Phaser.Game object is the main controller for the entire Phaser game.
+/**
+ * Setup the root class for the whole game.
+ */
 class Game extends Phaser.Game {
   constructor() {
-    const { gameWidth, gameHeight } = Properties;
+    const {
+      gameWidth,
+      gameHeight,
+      showStats
+    } = Properties;
 
     // Create your Phaser game and inject it into the `#game-container` div.
     super(gameWidth, gameHeight, Phaser.CANVAS, 'game-container');
@@ -28,11 +34,14 @@ class Game extends Phaser.Game {
     this.state.start('BootState');
 
     // Handle debug mode.
-    if (__DEV__) {
+    if (__DEV__ && showStats) {
       this.setupStats();
     }
   }
 
+  /**
+   * Display the FPS and MS using Stats.js.
+   */
   setupStats() {
     // Setup the new stats panel.
     const stats = new Stats();

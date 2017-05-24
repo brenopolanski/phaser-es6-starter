@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 
-// A Game Object with a texture, capable of running animation,
-// input events and physics.
+/**
+ * Setup and control base player.
+ */
 class Player extends Phaser.Sprite {
   constructor(game, x, y) {
     super(game, x, y, 'player', 0);
@@ -30,17 +31,20 @@ class Player extends Phaser.Sprite {
     this.gamePad1 = game.input.gamepad.pad1;
   }
 
+  /**
+   * Handle actions in the main game loop.
+   */
   update() {
     this.body.velocity.x = 0;
 
-    // Gamepad "connected or not" indicator
+    // Gamepad "connected or not" indicator.
     if (this.game.input.gamepad.supported &&
         this.game.input.gamepad.active &&
         this.gamePad1.connected) {
 
       this.gamepadIndicator.animations.frame = 0;
 
-      // Gamepad controls
+      // Gamepad controls.
       if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) ||
           this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
 
@@ -58,7 +62,7 @@ class Player extends Phaser.Sprite {
     else {
       this.gamepadIndicator.animations.frame = 1;
 
-      // Keyboard controls
+      // Keyboard controls.
       if (this.cursors.left.isDown) {
         this.walkToLeft();
       }
@@ -71,6 +75,9 @@ class Player extends Phaser.Sprite {
     }
   }
 
+  /**
+   * Player moves left.
+   */
   walkToLeft() {
     this.body.velocity.x = -150;
     this.animations.play('walk');
@@ -80,6 +87,9 @@ class Player extends Phaser.Sprite {
     }
   }
 
+  /**
+   * Player moves right.
+   */
   walkToRight() {
     this.body.velocity.x = 150;
     this.animations.play('walk');
