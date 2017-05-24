@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+// A Game Object with a texture, capable of running animation,
+// input events and physics.
 class Player extends Phaser.Sprite {
   constructor(game, x, y) {
     super(game, x, y, 'player', 0);
@@ -14,15 +16,15 @@ class Player extends Phaser.Sprite {
 
     game.input.gamepad.start();
 
-    this.gamePadIndicator = game.add.sprite(10, 10, 'gamePadIndicator');
-    this.gamePadIndicator.scale.x = 2;
-    this.gamePadIndicator.scale.y = 2;
-    this.gamePadIndicator.animations.frame = 1;
+    this.gamepadIndicator = game.add.sprite(10, 10, 'gamepadIndicator');
+    this.gamepadIndicator.scale.x = 2;
+    this.gamepadIndicator.scale.y = 2;
+    this.gamepadIndicator.animations.frame = 1;
 
-    // Set up a Phaser controller for keyboard input.
+    // Setup a Phaser controller for keyboard input.
     this.cursors = game.input.keyboard.createCursorKeys();
 
-    // Set up a Phaser controller for gamepad input.
+    // Setup a Phaser controller for gamepad input.
     // To listen to buttons from a specific pad listen directly on
     // that pad game.input.gamepad.padX, where X = pad 1-4.
     this.gamePad1 = game.input.gamepad.pad1;
@@ -36,9 +38,9 @@ class Player extends Phaser.Sprite {
         this.game.input.gamepad.active &&
         this.gamePad1.connected) {
 
-      this.gamePadIndicator.animations.frame = 0;
+      this.gamepadIndicator.animations.frame = 0;
 
-      // GamePad controls
+      // Gamepad controls
       if (this.gamePad1.isDown(Phaser.Gamepad.XBOX360_DPAD_LEFT) ||
           this.gamePad1.axis(Phaser.Gamepad.XBOX360_STICK_LEFT_X) < -0.1) {
 
@@ -54,7 +56,7 @@ class Player extends Phaser.Sprite {
       }
     }
     else {
-      this.gamePadIndicator.animations.frame = 1;
+      this.gamepadIndicator.animations.frame = 1;
 
       // Keyboard controls
       if (this.cursors.left.isDown) {

@@ -1,11 +1,15 @@
 import Phaser from 'phaser';
 
+// This is a base State class which can be extended. It provides quick access
+// to common functions such as the camera, cache, input, match, sound and more.
 class MainMenuState extends Phaser.State {
   init() {
     this.background = null;
     this.logo = null;
   }
 
+  // A couple of Sprites, tweens to make them appear. Then the game waits
+  // for an input event before fading out and starting the Game class.
   create() {
     this.background = this.add.sprite(0, 0, 'menuBackground');
     this.background.alpha = 0;
@@ -13,15 +17,25 @@ class MainMenuState extends Phaser.State {
     this.logo = this.add.sprite(this.world.centerX, -300, 'logo');
     this.logo.anchor.setTo(0.5, 0.5);
 
-    this.add.tween(this.background).to({ alpha: 1}, 2000, Phaser.Easing.Bounce.InOut, true);
-    this.add.tween(this.logo).to({ y: 220 }, 2000, Phaser.Easing.Elastic.Out, true, 2000);
+    this.add.tween(this.background).to(
+      { alpha: 1 }, 2000, Phaser.Easing.Bounce.InOut, true
+    );
+
+    this.add.tween(this.logo).to(
+      { y: 220 }, 2000, Phaser.Easing.Elastic.Out, true, 2000
+    );
 
     this.input.onDown.addOnce(this.fadeOut, this);
   }
 
   fadeOut() {
-    this.add.tween(this.background).to({ alpha: 0 }, 2000, Phaser.Easing.Linear.None, true);
-    const tween = this.add.tween(this.logo).to({ y: 800 }, 2000, Phaser.Easing.Linear.None, true);
+    const tween = this.add.tween(this.logo).to(
+      { y: 800 }, 2000, Phaser.Easing.Linear.None, true
+    );
+
+    this.add.tween(this.background).to(
+      { alpha: 0 }, 2000, Phaser.Easing.Linear.None, true
+    );
 
     tween.onComplete.add(this.startGame, this);
   }

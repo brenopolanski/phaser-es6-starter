@@ -10,14 +10,13 @@ import GameState from './states/GameState';
 
 import Properties from './Properties';
 
+// The Phaser.Game object is the main controller for the entire Phaser game.
 class Game extends Phaser.Game {
   constructor() {
-    const documentElement = document.documentElement;
-    const width = documentElement.clientWidth > Properties.gameWidth ? Properties.gameWidth : documentElement.clientWidth;
-    const height = documentElement.clientHeight > Properties.gameHeight ? Properties.gameHeight : documentElement.clientHeight;
+    const { gameWidth, gameHeight } = Properties;
 
     // Create your Phaser game and inject it into the `#game-container` div.
-    super(width, height, Phaser.CANVAS, 'game-container');
+    super(gameWidth, gameHeight, Phaser.CANVAS, 'game-container');
 
     // Add the States your game has.
     this.state.add('BootState', BootState);
