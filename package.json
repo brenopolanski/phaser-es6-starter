@@ -63,6 +63,7 @@
     "path-exists": "^3.0.0",
     "postcss-loader": "^2.0.5",
     "rimraf": "^2.6.1",
+    "stats.js": "^0.17.0",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.6.0",

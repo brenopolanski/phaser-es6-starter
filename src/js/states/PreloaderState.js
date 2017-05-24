@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
+import WebFont from 'webfontloader';
 
+import Properties from '../Properties';
 import menuBackground from '../../images/menu_background.jpg';
 import logo from '../../images/logo.png';
 import level1 from '../../images/level_1.png';
@@ -15,6 +17,8 @@ class PreloaderState extends Phaser.State {
   }
 
   preload() {
+    const { fontFamily } = Properties;
+
     // Setup our preloader sprite.
     this.preloadBar = this.add.sprite(200, 250, 'preloadBar');
     this.load.setPreloadSprite(this.preloadBar);
@@ -26,6 +30,13 @@ class PreloaderState extends Phaser.State {
     this.load.spritesheet('gamepadIndicator', gamepadIndicator, 16, 16);
     this.load.spritesheet('player', player, 58, 96, 5);
     this.load.image('level1', level1);
+
+    // Load external font.
+    WebFont.load({
+      google: {
+        families: fontFamily
+      }
+    });
   }
 
   // When the load is finished the create function is called,
