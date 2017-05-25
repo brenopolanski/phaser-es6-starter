@@ -4,12 +4,10 @@
 const gulp       = require('gulp');
 const plumber    = require('gulp-plumber');
 const del        = require('del');
-const vinylPaths = require('vinyl-paths');
 const paths      = require('../paths');
 
 gulp.task('clean:src', () => {
-  gulp.src('./src/**/*')
-    .pipe(vinylPaths(del));
+  return del('./src/**/*');
 });
 
 gulp.task('empty', ['clean:src'], () => {
@@ -19,4 +17,4 @@ gulp.task('empty', ['clean:src'], () => {
 });
 
 // Call to create an empty game project template in `src/` folder.
-module.exports = gulp.task('template:empty', ['empty']);
+module.exports = gulp.task('template:empty', ['clean:src', 'empty']);
