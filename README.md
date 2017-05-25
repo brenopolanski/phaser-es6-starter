@@ -26,7 +26,7 @@ First of all, install the dependencies to run this boilerplate.
 - [NodeJS](http://nodejs.org/)
 - [GulpJS](http://gulpjs.com/)
 
-```sh
+```bash
 # Clone this repository
 $ git clone git@github.com:brenopolanski/phaser-es6-starter.git my-game
 $ cd my-game
@@ -59,6 +59,38 @@ If you found this project useful, then please consider giving it a :star: on Git
 - `gulp template:empty`: Call to create an empty game project template in `src/` folder;
 - `gulp vscode`: Call [VSCode Intellisense for Phaser](http://www.html5gamedevs.com/topic/27418-visual-studio-code-intellisense-for-phaserjs/);
 - `gulp deploy`: Deploy compiled files at `game` folder to `github` on branch `gh-pages`.
+
+## Editor Configuration
+
+**Atom**
+
+```bash
+apm install editorconfig es6-javascript atom-ternjs javascript-snippets linter linter-eslint language-babel autocomplete-modules file-icons
+```
+
+**VSCode**
+
+- [Editorconfig](https://github.com/editorconfig/editorconfig-vscode)
+- [ESLint](https://github.com/Microsoft/vscode-eslint)
+- [Flow](https://github.com/flowtype/flow-for-vscode)
+- [Babel](https://github.com/dzannotti/vscode-babel)
+- [ES6 Snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+
+**Sublime**
+
+- [Editorconfig Integration](https://github.com/sindresorhus/editorconfig-sublime#readme)
+- [Linting](https://github.com/SublimeLinter/SublimeLinter3)
+- [ESLint Integration](https://github.com/roadhump/SublimeLinter-eslint)
+- [Syntax Highlighting](https://github.com/babel/babel-sublime)
+- [Autocompletion](https://github.com/ternjs/tern_for_sublime)
+- [Node Snippets](https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets)
+- [ES6 Snippets](https://packagecontrol.io/packages/ES6-Toolkit)
+
+**Others**
+
+- [Editorconfig](http://editorconfig.org/#download)
+- [ESLint](http://eslint.org/docs/user-guide/integrations#editors)
+- [Babel Syntax Plugin](https://babeljs.io/docs/plugins/)
 
 ## Contributing
 
