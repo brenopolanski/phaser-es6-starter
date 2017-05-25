@@ -45,12 +45,12 @@ $ yarn start (or npm start)
 
 - `yarn dev (or npm run dev)`: Starts the game on development mode;
 - `yarn build (or npm run build)`: Build game to production;
-- `yarn build:analyzer (or npm run build:analyzer)`: Build game to production and open bundle analyzer on 8888 port;
+- `yarn build:analyzer (or npm run build:analyzer)`: Build game to production and open bundle analyzer on `8888` port;
 - `yarn start (or npm start)`: Special script reserved to run production code. Change as you wish. For now, it is the same as `yarn dev`.
 
-## Tasks Gulp
+## Tasks
 
-- `gulp template-empty`: Call to create an empty game project template;
+- `gulp template-empty`: Call to create an empty game project template in `src/` folder;
 - `gulp vscode`: Call [VSCode Intellisense for Phaser](http://www.html5gamedevs.com/topic/27418-visual-studio-code-intellisense-for-phaserjs/);
 - `gulp deploy`: Deploy compiled files at `game` folder to `github` on branch `gh-pages`.
 
