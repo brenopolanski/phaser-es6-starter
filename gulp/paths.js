@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = {
+  srcRoot: './src/**/*',
+
   toolkit: {
     vscodeIntellisense: {
       files: {
