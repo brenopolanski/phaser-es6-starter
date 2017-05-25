@@ -15,6 +15,8 @@
 
 A template for writing [Phaser](http://phaser.io/) Games based on [ECMAScript 2015 (ES6)](https://www.ecma-international.org/ecma-262/6.0/) + [Webpack](https://webpack.github.io/) + [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/) for rapid game development.
 
+Invite me to a coffee [![donate-paypal](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/btn_donate_paypal.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNXA4YYGQCJZG)
+
 ## Getting Started
 
 ### Installation
@@ -41,6 +43,10 @@ $ yarn start (or npm start)
 
 > [Check it live](http://brenopolanski.com/phaser-es6-starter/) or see the tutorial: [Advanced Phaser and TypeScript Projects](http://www.photonstorm.com/phaser/advanced-phaser-and-typescript-projects) by [Richard Davey](https://github.com/photonstorm) at [www.photonstorm.com](http://www.photonstorm.com/).
 
+### :heart: Found this project useful?
+
+If you found this project useful, then please consider giving it a :star: on Github and sharing it with your friends via social media.
+
 ## Scripts
 
 - `yarn dev (or npm run dev)`: Starts the game on development mode;
@@ -65,6 +71,12 @@ For detailed changelog, see [Releases](https://github.com/brenopolanski/phaser-e
 ## Credits
 
 Phaser is a free and open source software developed and owned by [Richard Davey](https://github.com/photonstorm) at [www.photonstorm.com](http://www.photonstorm.com/). You can visit [their funding page](http://phaser.io/community/donate) and help them to make Phaser even better.
+
+## Donations
+
+Donations would be more than welcome :)
+
+[![donate-paypal](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/btn_donate_paypal.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNXA4YYGQCJZG)
 
 ## License
 
