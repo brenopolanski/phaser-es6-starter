@@ -1,6 +1,6 @@
 'use strict';
 
-// Necessary Plugins
+// Necessary Plugins.
 const gulp        = require('gulp');
 const plumber     = require('gulp-plumber');
 const { resolve } = require('path');
@@ -9,7 +9,7 @@ const paths       = require('../paths');
 
 const NODE_DIR = resolve(__dirname, '../../node_modules/');
 
-// Call VSCode Intellisense for Phaser
+// Call VSCode Intellisense for Phaser.
 module.exports = gulp.task('vscode', () => {
   pathExists(NODE_DIR).then(exists => {
     if (exists) {

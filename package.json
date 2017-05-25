@@ -50,6 +50,7 @@
     "browser-sync-webpack-plugin": "^1.1.4",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.2",
+    "del": "^2.2.2",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",
     "expose-loader": "^0.7.3",
@@ -66,6 +67,7 @@
     "stats.js": "^0.17.0",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
+    "vinyl-paths": "^2.1.0",
     "webpack": "^2.6.0",
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-merge": "^4.1.0"

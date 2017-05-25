@@ -39,7 +39,7 @@ $ yarn start (or npm start)
 
 [![game-demo](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/game-demo.png)](http://brenopolanski.com/phaser-es6-starter/)
 
-> [Check it live](http://brenopolanski.com/phaser-es6-starter/) or see the tutorial: [Advanced Phaser and TypeScript Projects](http://www.photonstorm.com/phaser/advanced-phaser-and-typescript-projects).
+> [Check it live](http://brenopolanski.com/phaser-es6-starter/) or see the tutorial: [Advanced Phaser and TypeScript Projects](http://www.photonstorm.com/phaser/advanced-phaser-and-typescript-projects) by [Richard Davey](https://github.com/photonstorm) at [www.photonstorm.com](http://www.photonstorm.com/).
 
 ## Scripts
 
@@ -50,7 +50,7 @@ $ yarn start (or npm start)
 
 ## Tasks
 
-- `gulp template-empty`: Call to create an empty game project template in `src/` folder;
+- `gulp template:empty`: Call to create an empty game project template in `src/` folder;
 - `gulp vscode`: Call [VSCode Intellisense for Phaser](http://www.html5gamedevs.com/topic/27418-visual-studio-code-intellisense-for-phaserjs/);
 - `gulp deploy`: Deploy compiled files at `game` folder to `github` on branch `gh-pages`.
 

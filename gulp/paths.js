@@ -15,6 +15,14 @@ module.exports = {
         },
         to: './src/js/'
       }
+    },
+    projectTemplates: {
+      empty: {
+        files: {
+          copy: './toolkit/project-templates/empty/**/*',
+          to: './src/'
+        }
+      }
     }
   },
 
