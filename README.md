@@ -72,7 +72,6 @@ apm install editorconfig es6-javascript atom-ternjs javascript-snippets linter l
 
 - [Editorconfig](https://github.com/editorconfig/editorconfig-vscode)
 - [ESLint](https://github.com/Microsoft/vscode-eslint)
-- [Flow](https://github.com/flowtype/flow-for-vscode)
 - [Babel](https://github.com/dzannotti/vscode-babel)
 - [ES6 Snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 
